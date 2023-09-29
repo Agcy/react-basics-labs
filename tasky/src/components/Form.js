@@ -4,6 +4,21 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
+const options = [
+  {
+  value: "high",
+  label: "high"
+},
+{
+  value: "low",
+  label: "low"
+}, 
+{
+  value: "medium",
+  label: "medium"
+},
+]
+
 const AddTaskForm = (props) => {
 
   return (
@@ -43,7 +58,9 @@ const AddTaskForm = (props) => {
         rows={1}
         onChange={(event) => props.change(event)}
       >
-            <MenuItem value="high">
+
+            {/*roughly */}
+            {/* <MenuItem value="high">
               high
             </MenuItem>
             <MenuItem value="low">
@@ -51,7 +68,14 @@ const AddTaskForm = (props) => {
             </MenuItem>
             <MenuItem value="medium">
               medium
+            </MenuItem> */}
+
+            {/*elegant */}
+            {options.map((option) => (
+            <MenuItem value={option.value}>
+              {option.label}
             </MenuItem>
+            ))}
       </TextField>
     </div>
     <div>

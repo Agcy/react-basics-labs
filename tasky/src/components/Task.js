@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import { Chip } from '@mui/material';
 
 function Task(props){
 
@@ -43,6 +44,13 @@ function Task(props){
                 <Typography component="p" variant="subtitle2" color="text.primary">
                     Due: {props.deadline}
                 </Typography>
+                </Box>
+                <Box sx={
+                    {textAlign: 'center'}
+                }>
+                    <Chip variant='contained' label={props.priority} component="p" color={props.priority == 'high' ? 'error' : props.priority == 'medium' ? 'warning' : 'success'}>
+                    
+                    </Chip>
                 </Box>
                 <Typography
                     component="p"
